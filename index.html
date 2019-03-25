@@ -178,10 +178,10 @@ svg.selectAll("circle")
 });  
 
 // Map the cities I have lived in!
-d3.csv("cities-to-visit.csv", function(data) {
+d3.csv("cities-to-visit.csv", function(data2) {
 
 svg.selectAll("circle")
-	.data(data)
+	.data(data2)
 	.enter()
 	.append("circle")
 	.attr("cx", function(d) {

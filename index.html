@@ -65,9 +65,7 @@ var projection = d3.geoAlbersUsa()
         
 // Define path generator
 var path = d3.geoPath()
-    .projection(projection);to SVG paths
-		  	 .projection(projection);  // tell path generator to use albersUsa projection
-
+    .projection(projection);
 		
 // Define linear scale for output
 var color = d3.scale.linear()

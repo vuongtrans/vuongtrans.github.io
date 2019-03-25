@@ -64,7 +64,8 @@ var projection = d3.geoAlbersUsa()
 				   .scale([1000]);          // scale things down so see entire US
         
 // Define path generator
-var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+var path = d3.geoPath()
+    .projection(projection);to SVG paths
 		  	 .projection(projection);  // tell path generator to use albersUsa projection
 
 		

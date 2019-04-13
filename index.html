@@ -4,8 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Choropleth with auto-calculated color (Highmaps)</title>
+  <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
+
+<div class="switch-toggle switch-3 switch-candy">
+  <input id="on" name="state-d" type="radio" checked="" />
+  <label for="on" onclick="">Male</label>
+
+  <input id="na" name="state-d" type="radio" disabled checked="checked" />
+  <label for="na" onclick="">Both sexes;</label>
+
+  <input id="off" name="state-d" type="radio" />
+  <label for="off" onclick="">Female</label>
+
+  <a></a>
+</div>
   <style>
     #container1 { border:1px dotted blue; width: 700px; height: 475px; position: relative; }
+
+    .switch-toggle {
+  width: 10em;
+}
+
+.switch-toggle label:not(.disabled) {
+  cursor: pointer;
+}
   </style>
 </head>
 <body>

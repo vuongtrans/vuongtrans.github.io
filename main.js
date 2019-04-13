@@ -68,17 +68,17 @@
         element: document.getElementById('map'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
-        fills: { defaultFill: '#FFFFFF' },
+        fills: { defaultFill: '#F5F5F5' },
         data: dataset,
         geographyConfig: {
-            borderColor: '#B7B7B7',
-            highlightBorderWidth: 1,
+            borderColor: '#DEDEDE',
+            highlightBorderWidth: 10,
             // don't change color on mouse hover
             highlightFillColor: function(geo) {
-                return geo['fillColor'] || '#FFFF00';
+                return geo['fillColor'] || '#F5F5F5';
             },
             // only change border
-            highlightBorderColor: '#B7B7B7',
+            highlightBorderColor: '#FFFF00',
             // show desired information in tooltip
             popupTemplate: function(geo, data) {
                 // don't show tooltip if country don't present in dataset

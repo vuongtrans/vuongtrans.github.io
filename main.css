@@ -5,6 +5,8 @@ body {
 }
 
 #map { 
+  width: 700px; 
+  height: 475px; 
   position:relative; 
   margin: 0 auto; 
 }

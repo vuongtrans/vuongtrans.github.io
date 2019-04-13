@@ -65,18 +65,6 @@ function renderWorldMap(userOption) {
         }
     }
   });
-
-  const c = document.getElementById("map-legend");
-  const ctx = c.getContext("2d");
-
-  // Create gradient
-  var grd = ctx.createLinearGradient(0, 0, 500, 0);
-  grd.addColorStop(0, "#ADD8E6");
-  grd.addColorStop(1, "#0000FF");
-
-  // Fill with gradient
-  ctx.fillStyle = grd;
-  ctx.fillRect(10, 10, 500, 80);
 }
 
 /*

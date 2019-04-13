@@ -16,9 +16,9 @@
 <form action="#" method="post" class="demoForm" id="demoForm">
     <fieldset>
     <p>Select your size:&nbsp;
-        <label><input type="radio" name="size" value="5" /> Male</label>
-        <label><input type="radio" name="size" value="8" checked="checked" /> Both sexes</label>
-        <label><input type="radio" name="size" value="12" /> Female</label>
+        <label><input type="radio" name="size" value="5" onclick="maleClicked()"/> Male</label>
+        <label><input type="radio" name="size" value="8" checked="checked" onclick="bothSexesClicked()"/> Both sexes</label>
+        <label><input type="radio" name="size" value="12" onclick="femaleClicked()"/> Female</label>
     </p>
     </fieldset>
 </form>

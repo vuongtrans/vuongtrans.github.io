@@ -72,7 +72,7 @@
         data: dataset,
         geographyConfig: {
             borderColor: '#DEDEDE',
-            highlightBorderWidth: 10,
+            highlightBorderWidth: 5,
             // don't change color on mouse hover
             highlightFillColor: function(geo) {
                 return geo['fillColor'] || '#F5F5F5';

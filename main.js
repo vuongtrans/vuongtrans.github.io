@@ -79,8 +79,8 @@
             highlightFillColor: function(geo) {
                 return geo['fillColor'] || '#F5F5F5';
             },
-            // only change border
-            highlightBorderColor: '#B7B7B7',
+            // // only change border
+            // highlightBorderColor: '#B7B7B7',
             // show desired information in tooltip
             popupTemplate: function(geo, data) {
                 // don't show tooltip if country don't present in dataset

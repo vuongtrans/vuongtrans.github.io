@@ -23,9 +23,9 @@ body {
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
 }
 
-.map-legend {
-  position: relative; 
-  margin: 0 auto; 
+.legend-container {
+  width: 100%;
+  margin: auto;
   text-align: center;
 }
 

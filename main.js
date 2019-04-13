@@ -40,8 +40,6 @@
 	[ 'YEM', 9 ],[ 'ZMB', 11 ],[ 'ZWE', 19 ]];
 
     // Datamaps expect data in format:
-    // { "USA": { "fillColor": "#42a844", numberOfWhatever: 75},
-    //   "FRA": { "fillColor": "#8dc386", numberOfWhatever: 43 } }
     var dataset = {};
 
     // We need to colorize every country based on "numberOfWhatever"
@@ -49,20 +47,20 @@
     // For this purpose we create palette(using min/max series-value)
     var onlyValues = series.map(function(obj){ return obj[1]; });
     var minValue = Math.min.apply(null, onlyValues),
-            maxValue = Math.max.apply(null, onlyValues);
+        maxValue = Math.max.apply(null, onlyValues);
 
     // create color palette function
     // color can be whatever you wish
     var paletteScale = d3.scale.linear()
-            .domain([minValue,maxValue])
-            .range(["#EFEFFF","#02386F"]); // blue color
+      .domain([minValue,maxValue])
+      .range(["#ADD8E6","#0000FF"]); // blue color
 
     // fill dataset in appropriate format
     series.forEach(function(item){ //
         // item example value ["USA", 70]
         var iso = item[0],
-                value = item[1];
-        dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
+            value = item[1];
+        dataset[iso] = { suicide_rate: value, fillColor: paletteScale(value) };
     });
 
     // render map
@@ -88,17 +86,15 @@
                 // tooltip content
                 return ['<div class="hoverinfo">',
                     '<strong>', geo.properties.name, '</strong>',
-                    '<br>Count: <strong>', data.numberOfThings, '</strong>',
+                    '<br>Suicide Rate: <strong>', data.suicide_rate, '</strong>',
                     '</div>'].join('');
             }
         }
     });
 
-    function readData() {
+function readData() {
   const csv = require('csv-parser');
   const fs = require('fs');
-
-  console.log('hello world');
 
   let all_country_data = [];
 
@@ -112,8 +108,7 @@
       all_country_data.push(country_data);
     })
     .on('end', () => {
-      console.log('CSV file read completed');
-      // console.log(all_country_data, {'maxArrayLength': null});
+      console.log('The CSV file has been read completely');
       console.dir(all_country_data, {depth: null, colors: true, maxArrayLength: null});
     });
 }

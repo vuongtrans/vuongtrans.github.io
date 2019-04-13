@@ -51,6 +51,9 @@ body {
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
 }
 
+.my-legend{
+  display: inline-block;
+}
   .my-legend .legend-title {
     text-align: center;
     margin-bottom: 8px;

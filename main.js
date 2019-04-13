@@ -63,14 +63,12 @@
         dataset[iso] = { suicideRate: value, fillColor: paletteScale(value) };
     });
 
-    pattern = document.getElementById('vertical-stripe');
-
     // render map
     new Datamap({
         element: document.getElementById('map'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
-        fills: { defaultFill: pattern },
+        fills: { defaultFill: '#FFFFFF' },
         data: dataset,
         geographyConfig: {
             borderColor: '#B7B7B7',

@@ -146,7 +146,7 @@
 
     // render map
     new Datamap({
-        element: document.getElementById('map'),
+        element: document.getElementById('suicide-rate-map'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
         fills: { defaultFill: '#F5F5F5' },

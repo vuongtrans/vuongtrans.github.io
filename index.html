@@ -6,32 +6,36 @@
   <title>Choropleth with auto-calculated color (Highmaps)</title>
   <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
 
-<div class="switch-toggle switch-3 switch-candy">
-  <input id="on" name="state-d" type="radio" checked="" />
-  <label for="on" onclick="">Male</label>
-
-  <input id="na" name="state-d" type="radio" checked="checked" />
-  <label for="na" onclick="">Both sexes;</label>
-
-  <input id="off" name="state-d" type="radio" />
-  <label for="off" onclick="">Female</label>
-
-  <a></a>
-</div>
   <style>
     #container1 { border:1px dotted blue; width: 700px; height: 475px; position: relative; }
 
     .switch-toggle {
-  width: 10em;
-}
+  		width: 20em;
+	}
 
-.switch-toggle label:not(.disabled) {
-  cursor: pointer;
-}
+	.switch-toggle label:not(.disabled) {
+  	cursor: pointer;
+	}
   </style>
+
 </head>
 <body>
   <h1>Worldwide Suicide Rates</h1>
+  <p>According to the World Health Organization (WHO), there was an estimated 793,000
+     suicide deaths worldwide in 2016. This indicates that there is an annual global
+     age-standardized suicide rate of 10.5 per 100,000 individuals.</p>
+
+  <div class="switch-toggle switch-3 switch-candy">
+  	<input id="on" name="state-d" type="radio" checked="" />
+  	<label for="on" onclick="">Male</label>
+
+  	<input id="na" name="state-d" type="radio" checked="checked" />
+  	<label for="na" onclick="">Both sexes;</label>
+
+  	<input id="off" name="state-d" type="radio" />
+  	<label for="off" onclick="">Female</label>
+  </div>
+  
   <div id="container1"></div>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>

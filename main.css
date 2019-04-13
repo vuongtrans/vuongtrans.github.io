@@ -4,7 +4,7 @@ body {
   background-color: dimgrey;
 }
 
-#suicide-rate-map { 
+#container1 { 
   width: 700px; 
   height: 475px; 
   position: relative; 

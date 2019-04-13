@@ -238,7 +238,7 @@ function getBothSexesData() {
   return bothsexes;
 }
 
-function readData(const option) {
+function readData() {
   const csv = require('csv-parser');
   const fs = require('fs');
   const filename = 'data2016' + option + '.csv';

@@ -40,7 +40,7 @@
   
 <script>
     // example data from server
-    var suicide_rate_bothsexes = [
+    var series = [
     [ 'AFG', 6 ],[ 'ALB', 5 ],[ 'DZA', 3 ],[ 'AGO', 8 ],[ 'ATG', 0 ],
  	[ 'ARG', 9 ],[ 'ARM', 5 ],[ 'AUS', 11 ],[ 'AUT', 11 ],[ 'AZE', 2 ],
  	[ 'BHS', 1 ],[ 'BHR', 5 ],[ 'BGD', 6 ],[ 'BRB', 0 ],[ 'BLR', 21 ],
@@ -98,7 +98,7 @@
             .range(["#EFEFFF","#02386F"]); // blue color
 
     // fill dataset in appropriate format
-    suicide_rate_bothsexes.forEach(function(item){ //
+    series.forEach(function(item){ //
         // item example value ["USA", 70]
         var iso = item[0],
                 value = item[1];

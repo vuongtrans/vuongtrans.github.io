@@ -50,7 +50,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: inline-block;
+    float: left;
     }
   .my-legend .legend-scale ul li {
     display: block;
@@ -59,9 +59,11 @@ body {
     text-align: center;
     font-size: 80%;
     list-style: none;
+    float: left;
     }
   .my-legend ul.legend-labels li span {
     display: block;
     height: 15px;
     width: 50px;
+    float: left;
     }

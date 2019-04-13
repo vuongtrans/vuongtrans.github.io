@@ -59,13 +59,13 @@
     series.forEach(function(item){ //
         // item example value ["USA", 70]
         var iso = item[0],
-            value = item[1];
-        dataset[iso] = { suicide_rate: value, fillColor: paletteScale(value) };
+                value = item[1];
+        dataset[iso] = { suicideRate: value, fillColor: paletteScale(value) };
     });
 
     // render map
     new Datamap({
-        element: document.getElementById('container1'),
+        element: document.getElementById('map'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
         fills: { defaultFill: '#F5F5F5' },
@@ -86,7 +86,7 @@
                 // tooltip content
                 return ['<div class="hoverinfo">',
                     '<strong>', geo.properties.name, '</strong>',
-                    '<br>Suicide Rate: <strong>', data.suicide_rate, '</strong>',
+                    '<br>Suicide Rate: <strong>', data.suicideRate, '</strong>',
                     '</div>'].join('');
             }
         }

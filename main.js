@@ -8,7 +8,7 @@ renderWorldMap('Both');
  */
 function renderWorldMap(userOption) {
   // Clear out the div to update it with the correct data
-  document.getElementById('container1').innerHTML = "";
+  document.getElementById('suicide-rate-map').innerHTML = "";
 
   // Based on user's input, select the correct data
   let data;
@@ -45,7 +45,7 @@ function renderWorldMap(userOption) {
 
   // Render the world map using the user selected data
   new Datamap({
-    element: document.getElementById('container1'),
+    element: document.getElementById('suicide-rate-map'),
     projection: 'mercator', 
     fills: { defaultFill: '#F5F5F5' },
     data: dataset,

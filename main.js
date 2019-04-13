@@ -45,7 +45,7 @@ function renderWorldMap(userOption) {
 
   // Render the world map using the user selected data
   new Datamap({
-    element: document.getElementById('container1'),
+    element: document.getElementById('suicide-rate-map'),
     projection: 'mercator', 
     fills: { defaultFill: '#F5F5F5' },
     data: dataset,

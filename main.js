@@ -99,19 +99,18 @@ renderWorldMap('Both');
 //     });
 
 function renderWorldMap(userOption) {
+  console.log('render: ', userOption);
   let data;
 
   if (userOption == 'Female') {
     data = getFemaleData();
-    console.log('you chose female');
   } else if (userOption == 'Male') {
     data = getMaleData();
-    console.log('you chose male');
   } else {
     data = getBothSexesData();
-    console.log('you chose both sexes');
   }
 
+  console.log(data);
   let series = data;
 
   // Datamaps expect data in format:
@@ -170,19 +169,16 @@ function renderWorldMap(userOption) {
 
 function maleClicked() {
   console.log('you chose male');
-  const data = getMaleData();
   renderWorldMap('Male');
 }
 
 function femaleClicked() {
   console.log('you chose female');
-  const data = getFemaleData();
   renderWorldMap('Female');
 }
 
 function bothSexesClicked() {
   console.log('you chose both sexes');
-  const data = getBothSexesData();
   renderWorldMap('Both');
 }
 

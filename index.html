@@ -15,9 +15,13 @@
 		}
 
     #container1 { width: 700px; height: 475px; position:relative; margin: 0 auto; }
+    #header { margin: 0 auto; }
+    #information { margin: 0 auto; }
+    #footer { margin: 0 auto; }
 
     .switch-toggle {
   		width: 15em;
+  		margin: 0 auto;
 	}
 
 	.switch-toggle label:not(.disabled) {
@@ -25,8 +29,8 @@
 	}
   </style>
 
-  <h1>Worldwide Suicide Rates</h1>
-  <p>According to the World Health Organization (WHO), there was an estimated 793,000
+  <h1 id="header">Worldwide Suicide Rates</h1>
+  <p id="information">According to the World Health Organization (WHO), there was an estimated 793,000
      suicide deaths worldwide in 2016. This indicates that there is an annual global
      age-standardized suicide rate of 10.5 per 100,000 individuals.</p>
 
@@ -43,7 +47,7 @@
 
   <div id="container1"></div>
 
-  <p>The data used for this visualization was obtained from the World Health Organization</p>
+  <p id="footer">The data used for this visualization was obtained from the World Health Organization</p>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>

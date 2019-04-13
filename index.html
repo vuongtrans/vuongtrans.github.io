@@ -14,14 +14,14 @@
   		height: 100%;
 		}
 
-    #container1 { width: 700px; height: 475px; margin: 0 auto; }
+    #container1 { width: 700px; height: 475px; position:relative; margin: 0 auto; }
 
     .switch-toggle {
-  		width: 10em;
+  		width: 15em;
 	}
 
 	.switch-toggle label:not(.disabled) {
-  	cursor: pointer;
+  		cursor: pointer;
 	}
   </style>
 
@@ -37,7 +37,7 @@
   	<input id="na" name="state-d" type="radio" checked="checked" />
   	<label for="na" onclick="">Both sexes;</label>
 
-  	<input id="off" name="state-d" type="radio" />
+  	<input id="off" name="state-d" type="radio" checked="" />
   	<label for="off" onclick="">Female</label>
   </div>
 

@@ -8,7 +8,7 @@ renderWorldMap('Both');
  */
 function renderWorldMap(userOption) {
   // Clear out the div to update it with the correct data
-  document.getElementById('container1').innerHTML = "";
+  document.getElementById('suicide-rate-map').innerHTML = "";
 
   // Based on user's input, select the correct data
   let data;

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Worldwide Suicide Rate</title>
-  <link href="main.css" el="stylesheet" type="text/css"/>
+  <link href="main.css" rel="stylesheet" type="text/css"/>
   <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
   <link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' />
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
@@ -17,6 +17,8 @@
   <h1 id="header">Worldwide Suicide Rates</h1>
   <p id="information">According to the World Health Organization (WHO), there was an estimated 793,000 suicide deaths worldwide in 2016.<br />This indicates that there is an annual global age-standardized suicide rate of 10.5 per 100,000 individuals.</p>
 
+  <div id="suicide-rate-map"></div>
+
   <form action="#" method="post" class="demoForm" id="demoForm">
     <fieldset>
     <p>Select data option:&nbsp;
@@ -26,8 +28,6 @@
     </p>
     </fieldset>
   </form>
-
-  <div id="suicide-rate-map"></div>
 
   <p id="footer">The data used for this visualization was obtained from the World Health Organization</p>
   

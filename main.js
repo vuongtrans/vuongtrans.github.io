@@ -93,3 +93,27 @@
             }
         }
     });
+
+    function readData() {
+  const csv = require('csv-parser');
+  const fs = require('fs');
+
+  console.log('hello world');
+
+  let all_country_data = [];
+
+  fs.createReadStream('data2016male.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+      const data = row;
+      const country = row.Country;
+      const suicide_rate = parseInt(row.SuicideRate);
+      const country_data = [country, suicide_rate];
+      all_country_data.push(country_data);
+    })
+    .on('end', () => {
+      console.log('CSV file read completed');
+      // console.log(all_country_data, {'maxArrayLength': null});
+      console.dir(all_country_data, {depth: null, colors: true, maxArrayLength: null});
+    });
+}

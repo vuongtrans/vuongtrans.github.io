@@ -1,10 +1,17 @@
+/*
+ * Initial the webpage with the map populated with data about the suicide rate for both sexes
+ */
+renderWorldMap('Both');
 
+/*
+ * Render the world map based upon user selection
+ */
 function renderWorldMap(userOption) {
+  // Clear out the div to update it with the correct data
   document.getElementById('container1').innerHTML = "";
 
-  console.log('render: ', userOption);
+  // Based on user's input, select the correct data
   let data;
-
   if (userOption == 'Female') {
     data = getFemaleData();
   } else if (userOption == 'Male') {
@@ -13,26 +20,22 @@ function renderWorldMap(userOption) {
     data = getBothSexesData();
   }
 
-  console.log(data);
   let series = data;
-
-  // Datamaps expect data in format:
   let dataset = {};
 
-  // We need to colorize every country based on "numberOfWhatever"
-  // colors should be uniq for every value.
-  // For this purpose we create palette(using min/max series-value)
+  // Bits and pieces has been borrowed from example from the DataMaps JavaScript 
+  // library to understand how to populate the map
+
+  // Color the countries using blues as the fill in color
+  // Blue has been researched to help prevent suicides
   let onlyValues = series.map(function(obj){ return obj[1]; });
   let minValue = Math.min.apply(null, onlyValues),
       maxValue = Math.max.apply(null, onlyValues);
-
-  // create color palette function
-  // color can be whatever you wish
   let paletteScale = d3.scale.linear()
     .domain([minValue,maxValue])
-    .range(["#ADD8E6","#0000FF"]); // blue color
+    .range(["#ADD8E6","#0000FF"]);
 
-  // fill dataset in appropriate format
+  // Create the data set to be used to populate and fill in the map
   series.forEach(function(item){ //
     // item example value ["USA", 70]
     let iso = item[0],
@@ -40,7 +43,7 @@ function renderWorldMap(userOption) {
     dataset[iso] = { suicideRate: value, fillColor: paletteScale(value) };
   });
 
-  // render map
+  // Render the world map using the user selected data
   new Datamap({
     element: document.getElementById('container1'),
     projection: 'mercator', // big world map
@@ -70,21 +73,32 @@ function renderWorldMap(userOption) {
   });
 }
 
+/*
+ * If user selects 'Male', render the world map with the data about males
+ */
 function maleClicked() {
-  console.log('you chose male');
   renderWorldMap('Male');
 }
 
+/*
+ * If user selects 'Female', render the world map with the data about females
+ */
 function femaleClicked() {
-  console.log('you chose female');
   renderWorldMap('Female');
 }
 
+/*
+ * If user selects 'Both sexes', render the world map with the data about both sexes
+ */
 function bothSexesClicked() {
-  console.log('you chose both sexes');
   renderWorldMap('Both');
 }
 
+/*
+ * Retrieve the data for males
+ * The following data was rendered using the readData method
+ * For simplicity, I saved the output and placed it in this function
+ */
 function getMaleData() {
   const male = [
     [ 'AFG', 10 ],[ 'ALB', 7 ],[ 'DZA', 4 ],[ 'AGO', 14 ],[ 'ATG', 0 ],
@@ -108,7 +122,7 @@ function getMaleData() {
     [ 'LAO', 12 ],[ 'LVA', 31 ],[ 'LBN', 4 ],[ 'LSO', 22 ],[ 'LBR', 13 ],
     [ 'LBY', 8 ],[ 'LTU', 47 ],[ 'LUX', 15 ],[ 'MDG', 10 ],[ 'MWI', 13 ],
     [ 'MYS', 8 ],[ 'MDV', 3 ],[ 'MLI', 13 ],[ 'MLT', 10 ],[ 'MRT', 12 ],
-    [ 'MUS', 12 ],[ 'MAX', 8 ],[ 'FSM', 16 ],[ 'MNG', 23 ],[ 'MNE', 12 ],
+    [ 'MUS', 12 ],[ 'MEX', 8 ],[ 'FSM', 16 ],[ 'MNG', 23 ],[ 'MNE', 12 ],
     [ 'MAR', 2 ],[ 'MOZ', 14 ],[ 'MMR', 6 ],[ 'NAM', 19 ],[ 'NPL', 11 ],
     [ 'NLD', 12 ],[ 'NZL', 17 ],[ 'NIC', 19 ],[ 'NER', 11 ],[ 'NGA', 17 ],
     [ 'NOR', 13 ],[ 'OMN', 4 ],[ 'PAK', 3 ],[ 'PAN', 7 ],[ 'PNG', 10 ],
@@ -128,6 +142,11 @@ function getMaleData() {
   return male;
 }
 
+/*
+ * Retrieve the data for females
+ * The following data was rendered using the readData method
+ * For simplicity, I saved the output and placed it in this function
+ */
 function getFemaleData() {
   const female = [
     [ 'AFG', 2 ],[ 'ALB', 4 ],[ 'DZA', 1 ],[ 'AGO', 4 ],[ 'ATG', 0 ],
@@ -171,6 +190,11 @@ function getFemaleData() {
   return female;
 }
 
+/*
+ * Retrieve the data for both sexes
+ * The following data was rendered using the readData method
+ * For simplicity, I saved the output and placed it in this function
+ */
 function getBothSexesData() {
   const bothsexes = [
     [ 'AFG', 6 ],[ 'ALB', 5 ],[ 'DZA', 3 ],[ 'AGO', 8 ],[ 'ATG', 0 ],
@@ -214,6 +238,10 @@ function getBothSexesData() {
   return bothsexes;
 }
 
+/*
+ * Function to read in data from csv files
+ * Requires the fs and csv-parser JavaScript libraries
+ */
 function readData() {
   const csv = require('csv-parser');
   const fs = require('fs');

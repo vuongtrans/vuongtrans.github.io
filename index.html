@@ -7,6 +7,7 @@
   <link href="main.css" rel="stylesheet" type="text/css"/>
   <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
   <link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' />
+  <link href='https://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.js"></script>
@@ -16,11 +17,11 @@
   <h1 id="header">Worldwide Suicide Rates</h1>
   <p id="information">According to the World Health Organization (WHO), there was an estimated 793,000 suicide deaths worldwide in 2016.<br />This indicates that there is an annual global age-standardized suicide rate of 10.5 per 100,000 individuals.</p>
 
-  <form class="demoForm" id="demoForm">
-    <p>Select data option:&nbsp;
-        <label><input type="radio" name="size" onclick="maleClicked()"/> Male</label>
-        <label><input type="radio" name="size" checked="checked" onclick="bothSexesClicked()"/> Both sexes</label>
-        <label><input type="radio" name="size" onclick="femaleClicked()"/> Female</label>
+  <form class="userOptions" id="userOptions">
+    <p class="optionTitle">Select data option:&nbsp;
+        <label><input class="optionTitle" type="radio" name="size" onclick="maleClicked()"/> Male</label>
+        <label><input class="optionTitle" type="radio" name="size" checked="checked" onclick="bothSexesClicked()"/> Both sexes</label>
+        <label><input class="optionTitle" type="radio" name="size" onclick="femaleClicked()"/> Female</label>
     </p>
   </form>
 

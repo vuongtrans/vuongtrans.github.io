@@ -118,16 +118,6 @@
 
 // based on what is clicked, update the series
 
-// get list of radio buttons with name 'size'
-var sz = document.forms['demoForm'].elements['size'];
-
-// loop through list
-for (var i=0, len=sz.length; i<len; i++) {
-    sz[i].onclick = function() { // assign onclick handler function to each
-        // put clicked radio button's value in total field
-        console.log(this.value);
-    };
-}
   var series = female;
 
     // Datamaps expect data in format:

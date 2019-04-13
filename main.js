@@ -46,24 +46,18 @@ function renderWorldMap(userOption) {
   // Render the world map using the user selected data
   new Datamap({
     element: document.getElementById('container1'),
-    projection: 'mercator', // big world map
-    // countries don't listed in dataset will be painted with this color
+    projection: 'mercator', 
     fills: { defaultFill: '#F5F5F5' },
     data: dataset,
     geographyConfig: {
       borderColor: '#DEDEDE',
       highlightBorderWidth: 5,
-      // don't change color on mouse hover
       highlightFillColor: function(geo) {
         return geo['fillColor'] || '#F5F5F5';
       },
-      // only change border
       highlightBorderColor: '#FFFF00',
-      // show desired information in tooltip
       popupTemplate: function(geo, data) {
-        // don't show tooltip if country don't present in dataset
         if (!data) { return ; }
-          // tooltip content
           return ['<div class="hoverinfo">',
                   '<strong>', geo.properties.name, '</strong>',
                   '<br>Suicide Rate: <strong>', data.suicideRate, '</strong>',

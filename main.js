@@ -1,5 +1,5 @@
 
-renderWorldMap('Both');
+// renderWorldMap('Both');
 
 //     // example data from server
 //     const bothsexes = [

@@ -73,14 +73,14 @@
         fills: { defaultFill: pattern },
         data: dataset,
         geographyConfig: {
-            borderColor: '#FFFF00',
-            highlightBorderWidth: 2,
+            borderColor: '#B7B7B7',
+            highlightBorderWidth: 5,
             // don't change color on mouse hover
             highlightFillColor: function(geo) {
                 return geo['fillColor'] || '#F5F5F5';
             },
             // only change border
-            highlightBorderColor: '#B7B7B7',
+            highlightBorderColor: '#FFFF00',
             // show desired information in tooltip
             popupTemplate: function(geo, data) {
                 // don't show tooltip if country don't present in dataset

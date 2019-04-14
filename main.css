@@ -68,19 +68,15 @@ body {
 }
 
 .map-legend-text-low { 
-  text-align: center; 
   font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
   color: #FFFFFF;
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
-  background: #ADD8E6;
 }
 
 .map-legend-text-high { 
-  text-align: center; 
   font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
   color: #FFFFFF;
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
-  background: #0000FF;
 }
 
 #footer { 

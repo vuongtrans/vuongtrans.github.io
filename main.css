@@ -85,6 +85,14 @@ body {
   height: 300px;
 } 
 
+.canvasjs-chart-toolbar {
+  display: none;
+}
+
+.canvasjs-chart-credit {
+  display: none;
+}
+
 #footer { 
   text-align: center; 
   font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;

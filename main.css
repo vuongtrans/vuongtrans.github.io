@@ -72,19 +72,11 @@ body {
   display: flex;
 }
 
-.flex-container > div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}
-
 #suicide-rate-map { 
   width: 700px; 
   height: 475px; 
   padding: 1em; 
-/*  position: absolute; */
-/*  margin: 0 auto;*/
+  position: relative; 
 } 
 
 #suicide-rate-vs-happy-index { 

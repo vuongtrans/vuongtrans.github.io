@@ -1,7 +1,8 @@
 /*
  * The following data was retrieved from two different data sources and compiled together
- * There were countries that has no happy index present, so they are skipped
- * The following six lists comprises of data regarding the suicide rate and happy index of the "Top 5" countries
+ * There were countries that has no happy index present, so they were skipped
+ * The following six lists comprises of data regarding the suicide rate and happy index of the happiest country,
+ *     the country with the highest suicide rate (per type), and the "unhappiest" country
  */
 const dataFemaleTop5 = [
   { label: "Denmark", y: 5.2 },
@@ -217,6 +218,7 @@ function bothSexesClicked() {
  * For simplicity, I saved the output and placed it in this function
  */
 function getMaleData() {
+  // const male = readData('Male');
   const male = [
     [ 'AFG', 10 ],[ 'ALB', 7 ],[ 'DZA', 4 ],[ 'AGO', 14 ],[ 'ATG', 0 ],
     [ 'ARG', 15 ],[ 'ARM', 10 ],[ 'AUS', 17 ],[ 'AUT', 17 ],[ 'AZE', 4 ],
@@ -265,6 +267,7 @@ function getMaleData() {
  * For simplicity, I saved the output and placed it in this function
  */
 function getFemaleData() {
+  // const female = readData('Female');
   const female = [
     [ 'AFG', 2 ],[ 'ALB', 4 ],[ 'DZA', 1 ],[ 'AGO', 4 ],[ 'ATG', 0 ],
     [ 'ARG', 3 ],[ 'ARM', 2 ],[ 'AUS', 6 ],[ 'AUT', 5 ],[ 'AZE', 1 ],
@@ -313,6 +316,7 @@ function getFemaleData() {
  * For simplicity, I saved the output and placed it in this function
  */
 function getBothSexesData() {
+  // const bothsexes = readData('Both');
   const bothsexes = [
     [ 'AFG', 6 ],[ 'ALB', 5 ],[ 'DZA', 3 ],[ 'AGO', 8 ],[ 'ATG', 0 ],
     [ 'ARG', 9 ],[ 'ARM', 5 ],[ 'AUS', 11 ],[ 'AUT', 11 ],[ 'AZE', 2 ],
@@ -359,7 +363,7 @@ function getBothSexesData() {
  * Function to read in data from csv files
  * Requires the fs and csv-parser JavaScript libraries
  */
-function readData() {
+function readData(userOption) {
   const csv = require('csv-parser');
   const fs = require('fs');
   const filename = 'data2016' + option + '.csv';

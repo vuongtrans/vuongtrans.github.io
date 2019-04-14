@@ -176,10 +176,10 @@ function renderWorldMap(userOption) {
   new Datamap({
     element: document.getElementById('suicide-rate-map'),
     projection: 'mercator', 
-    fills: { defaultFill: '#F5F5F5' },
+    fills: { defaultFill: '#000000' },
     data: dataset,
     geographyConfig: {
-      borderColor: '#DEDEDE',
+      borderColor: '#000000',
       highlightBorderWidth: 5,
       highlightFillColor: function(geo) {
         return geo['fillColor'] || '#F5F5F5';

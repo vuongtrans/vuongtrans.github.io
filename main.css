@@ -11,18 +11,6 @@ body {
   margin: 0 auto; 
 }
 
-.userOptions {
-  position: relative; 
-  margin: 0 auto; 
-  text-align: center;
-}
-
-.optionTitle {
-  font: 15 15px/1.3 'Merienda One', Helvetica, sans-serif;
-  color: #FFFFFF;
-  text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
-}
-
 #header { 
   text-align: center; 
   margin-bottom: -1rem;
@@ -38,36 +26,66 @@ body {
   color: #FFFFFF;
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
 }
-    
+
+.userOptions {
+  position: relative; 
+  margin: 0 auto; 
+  text-align: center;
+}
+
+.optionTitle {
+  font: 15 15px/1.3 'Merienda One', Helvetica, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
+}
+
+.map-legend {
+  display: inline-block;
+}
+
+.map-legend .legend-scale ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+
+.map-legend .legend-scale ul li {
+  display: block;
+  width: 50px;
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 80%;
+  list-style: none;
+  float: left;
+}
+
+.map-legend ul.legend-labels li span {
+  display: block;
+  height: 15px;
+  width: 50px;
+  float: left;
+}
+
+.map-legend-text-low { 
+  text-align: center; 
+  font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
+  background: #ADD8E6;
+}
+
+.map-legend-text-high { 
+  text-align: center; 
+  font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
+  background: #0000FF;
+}
+
 #footer { 
   text-align: center; 
   font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
   color: #FFFFFF;
   text-shadow: 1px 1px 0px #000000, 1px 1px 0px rgba(0,0,0,0.15);
 }
-
-.my-legend {
-  display: inline-block;
-}
-
-  .my-legend .legend-scale ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    float: left;
-    }
-  .my-legend .legend-scale ul li {
-    display: block;
-    width: 50px;
-    margin-bottom: 6px;
-    text-align: center;
-    font-size: 80%;
-    list-style: none;
-    float: left;
-    }
-  .my-legend ul.legend-labels li span {
-    display: block;
-    height: 15px;
-    width: 50px;
-    float: left;
-    }

@@ -1,74 +1,59 @@
 /*
  * Initial the webpage with the map populated with data about the suicide rate for both sexes
+ * in addition to the bar chart 
  */
-
 window.onload = function () {
 
   renderWorldMap('Both');
 
-var chart = new CanvasJS.Chart("chartContainer", {
-  animationEnabled: true,
-  title:{
-    text: "Olympic Medals of all Times (till 2016 Olympics)"
-  },
-  axisY: {
-    title: "Medals"
-  },
-  legend: {
-    cursor:"pointer",
-    itemclick : toggleDataSeries
-  },
-  toolTip: {
-    shared: true,
-    content: toolTipFormatter
-  },
-  data: [{
-    type: "bar",
-    showInLegend: true,
-    name: "Gold",
-    color: "gold",
-    dataPoints: [
-      { y: 243, label: "Italy" },
-      { y: 236, label: "China" },
-      { y: 243, label: "France" },
-      { y: 273, label: "Great Britain" },
-      { y: 269, label: "Germany" },
-      { y: 196, label: "Russia" },
-      { y: 1118, label: "USA" }
-    ]
-  },
-  {
-    type: "bar",
-    showInLegend: true,
-    name: "Silver",
-    color: "silver",
-    dataPoints: [
-      { y: 212, label: "Italy" },
-      { y: 186, label: "China" },
-      { y: 272, label: "France" },
-      { y: 299, label: "Great Britain" },
-      { y: 270, label: "Germany" },
-      { y: 165, label: "Russia" },
-      { y: 896, label: "USA" }
-    ]
-  },
-  {
-    type: "bar",
-    showInLegend: true,
-    name: "Bronze",
-    color: "#A57164",
-    dataPoints: [
-      { y: 236, label: "Italy" },
-      { y: 172, label: "China" },
-      { y: 309, label: "France" },
-      { y: 302, label: "Great Britain" },
-      { y: 285, label: "Germany" },
-      { y: 188, label: "Russia" },
-      { y: 788, label: "USA" }
-    ]
-  }]
-});
-chart.render();
+  var chart = new CanvasJS.Chart("suicide-rate-vs-happy-index", {
+    animationEnabled: true,
+    title:{
+      text: "Top countries with Highest Suicide Rates vs their Happy Index"
+    },
+    axisY: {
+      title: "Medals"
+    },
+    legend: {
+      cursor:"pointer",
+      itemclick : toggleDataSeries
+    },
+    toolTip: {
+      shared: true,
+      content: toolTipFormatter
+    },
+    data: [{
+      type: "bar",
+      showInLegend: true,
+      name: "Gold",
+      color: "gold",
+      dataPoints: [
+        { y: 243, label: "Italy" },
+        { y: 236, label: "China" },
+        { y: 243, label: "France" },
+        { y: 273, label: "Great Britain" },
+        { y: 269, label: "Germany" },
+        { y: 196, label: "Russia" },
+        { y: 1118, label: "USA" }
+      ]
+    },
+    {
+      type: "bar",
+      showInLegend: true,
+      name: "Silver",
+      color: "silver",
+      dataPoints: [
+        { y: 212, label: "Italy" },
+        { y: 186, label: "China" },
+        { y: 272, label: "France" },
+        { y: 299, label: "Great Britain" },
+        { y: 270, label: "Germany" },
+        { y: 165, label: "Russia" },
+        { y: 896, label: "USA" }
+      ]
+    }]
+  });
+  chart.render();
 
 function toolTipFormatter(e) {
   var str = "";

@@ -53,72 +53,12 @@ const dataHappyIndexBothSexes = [
 
 
 /*
- * Initial the webpage with the map populated with data about the suicide rate for both sexes
- * in addition to the bar chart 
+ * Initialize the webpage with the map populated with data about the suicide rate for both sexes in addition to the bar chart 
  */
 window.onload = function () {
 
   renderWorldMap('Both');
   renderBarChart('Both');
-
-// var chart = new CanvasJS.Chart("suicide-rate-vs-happy-index", {
-//   exportEnabled: true,
-//   animationEnabled: true,
-//   title:{
-//     text: "Suicide Rate vs Happy Index"
-//   },
-//   axisX: {
-//     title: "Country"
-//   },
-//   axisY: {
-//     title: "Suicide Rate",
-//     titleFontColor: "#4F81BC",
-//     lineColor: "#4F81BC",
-//     labelFontColor: "#4F81BC",
-//     tickColor: "#4F81BC"
-//   },
-//   axisY2: {
-//     title: "Happy Index (out of 10)",
-//     titleFontColor: "#C0504E",
-//     lineColor: "#C0504E",
-//     labelFontColor: "#C0504E",
-//     tickColor: "#C0504E"
-//   },
-//   toolTip: {
-//     shared: true
-//   },
-//   legend: {
-//     cursor: "pointer"
-//   },
-//   data: [{
-//     type: "column",
-//     name: "Suicide Rate",
-//     showInLegend: true,      
-//     yValueFormatString: "#,##0.# Units",
-//     dataPoints: [
-//       { label: "Russia",  y: 48.3 },
-//       { label: "Lithuania", y: 47.5 },
-//       { label: "Kazakhstan", y: 40.1 },
-//       { label: "Belarus",  y: 39.3 },
-//       { label: "Suriname",  y: 36.1 }
-//     ]
-//   },
-//   {
-//     type: "column",
-//     name: "Happy Index",
-//     axisYType: "secondary",
-//     showInLegend: true,
-//     yValueFormatString: "#,##0.# Units",
-//     dataPoints: [
-//       { label: "Russia", y: 5.856 },
-//       { label: "Lithuania", y: 5.813 },
-//       { label: "Kazakhstan", y: 5.919 },
-//       { label: "Belarus", y: 5.802 },
-//       { label: "Suriname", y: 6.269 }
-//     ]
-//   }]
-// });
-// chart.render();
 
 }
 
@@ -129,6 +69,21 @@ function renderBarChart(userOption) {
   // Clear out the div to update it with the correct data and new rendered map
   document.getElementById('suicide-rate-vs-happy-index').innerHTML = "";
 
+  // Based on user's input, select the correct data
+  let dataSuicideRate;
+  let dataHappyIndex;
+  if (userOption == 'Female') {
+    dataSuicideRate = dataFemaleTop5;
+    dataHappyIndex = dataHappyIndexFemale;
+  } else if (userOption == 'Male') {
+    dataSuicideRate = dataMaleTop5;
+    dataHappyIndex = dataHappyIndexMale;
+  } else {
+    dataSuicideRate = dataBothSexesTop5;
+    dataHappyIndex = dataHappyIndexBothSexes;
+  }
+
+  // Code to create a double bar chart using Canvas JS JavaScript Library
   let chart = new CanvasJS.Chart("suicide-rate-vs-happy-index", {
     exportEnabled: true,
     animationEnabled: true,
@@ -140,17 +95,17 @@ function renderBarChart(userOption) {
     },
     axisY: {
       title: "Suicide Rate",
-      titleFontColor: "#4F81BC",
-      lineColor: "#4F81BC",
-      labelFontColor: "#4F81BC",
-      tickColor: "#4F81BC"
+      titleFontColor: "#FFFF00",
+      lineColor: "#FFFF00",
+      labelFontColor: "#FFFF00",
+      tickColor: "#FFFF00"
     },
     axisY2: {
       title: "Happy Index (out of 10)",
-      titleFontColor: "#C0504E",
-      lineColor: "#C0504E",
-      labelFontColor: "#C0504E",
-      tickColor: "#C0504E"
+      titleFontColor: "#FFA500",
+      lineColor: "#FFA500",
+      labelFontColor: "#FFA500",
+      tickColor: "#FFA500"
     },
     toolTip: {
       shared: true
@@ -162,16 +117,16 @@ function renderBarChart(userOption) {
       type: "column",
       name: "Suicide Rate",
       showInLegend: true,      
-      yValueFormatString: "#,##0.# Units",
-      dataPoints: dataBothSexesTop5
+      yValueFormatString: "#,##0.#",
+      dataPoints: dataSuicideRate
     },
     {
       type: "column",
       name: "Happy Index",
       axisYType: "secondary",
       showInLegend: true,
-      yValueFormatString: "#,##0.# Units",
-      dataPoints: dataHappyIndexBothSexes
+      yValueFormatString: "#,##0.#",
+      dataPoints: dataHappyIndex
     }]
   });
   chart.render();
@@ -246,6 +201,7 @@ function renderWorldMap(userOption) {
  */
 function maleClicked() {
   renderWorldMap('Male');
+  renderBarChart('Male');
 }
 
 /*
@@ -253,6 +209,7 @@ function maleClicked() {
  */
 function femaleClicked() {
   renderWorldMap('Female');
+  renderBarChart('Female');
 }
 
 /*
@@ -260,6 +217,7 @@ function femaleClicked() {
  */
 function bothSexesClicked() {
   renderWorldMap('Both');
+  renderBarChart('Both');
 }
 
 /*

@@ -50,19 +50,6 @@
         <label><input class="optionTitle" type="radio" name="size" checked="checked" onclick="bothSexesClicked()"/> Both sexes</label>
         <label><input class="optionTitle" type="radio" name="size" onclick="femaleClicked()"/> Female</label>
     </p>
-
-    <!-- Legend for the world map -->
-    <div class='map-legend'>
-	 	<div class='legend-scale'>
-  			<ul class='legend-labels'>
-    			<li><span style='background:#ADD8E6'></span>Low</li>
-    			<li><span style='background:#82A2EC'></span></li>
-    			<li><span style='background:#576CF3;'></span></li>
-    			<li><span style='background:#2B36F9;'></span></li>
-    			<li><span style='background:#0000FF'></span>High</li>
-  			</ul>
-		</div>
-  	</div>
   </form>
 
   <!-- Container to allow both the map and chart to exist in same row, but separate columns -->
@@ -73,7 +60,23 @@
   	<div id="suicide-rate-vs-happy-index"></div>
   </div>
 
+  <!-- Legend for the world map -->
+  <form class="userOptions" id="userOptions">
+    <div class='map-legend'>
+      <div class='legend-scale'>
+        <ul class='legend-labels'>
+          <li><span style='background:#ADD8E6'></span>Low</li>
+          <li><span style='background:#82A2EC'></span></li>
+          <li><span style='background:#576CF3;'></span></li>
+          <li><span style='background:#2B36F9;'></span></li>
+          <li><span style='background:#0000FF'></span>High</li>
+        </ul>
+      </div>
+    </div>
+  </form>
+
   <!-- Page footer -->
+  <br />
   <p id="footer">The data used for this visualization was obtained from the World Health Organization and the Gallup World Poll.</p>
   
   <!-- Call main.js  -->

@@ -71,8 +71,9 @@ body {
 #suicide-rate-map { 
   width: 700px; 
   height: 475px; 
-  margin: 5px; 
   padding: 1em; 
+  position: relative; 
+  margin: 0 auto;
 /*  width: 700px; 
   height: 475px; 
   position: relative; 
@@ -82,8 +83,6 @@ body {
 #suicide-rate-vs-happy-index { 
   width: 100px; 
   height: 300px;
-  margin: 5px; 
-  padding: 1em; 
 } 
 
 #footer { 

@@ -4,51 +4,39 @@
  * The following six lists comprises of data regarding the suicide rate and happy index of the "Top 5" countries
  */
 const dataFemaleTop5 = [
+  { label: "Denmark", y: 5.2 },
   { label: "Uganda", y: 18.7 },
-  { label: "Nigeria", y: 17.1 },
-  { label: "Indonesia", y: 14.5 },
-  { label: "Sierra Leone", y: 14.2 },
-  { label: "Chad", y: 13.8 }
+  { label: "Burundi", y: 7.7 },
 ]
 
 const dataHappyIndexFemale = [
+  { label: "Denmark", y: 7.526 },
   { label: "Uganda", y: 3.739 },
-  { label: "Nigeria", y: 4.875 },
-  { label: "Indonesia", y: 5.314 },
-  { label: "Sierra Leone", y: 4.635 },
-  { label: "Chad", y: 3.763 }
+  { label: "Burundi", y: 2.905 },
 ]
 
 const dataMaleTop5 = [
-  { label: "Russia",  y: 48.3 },
-  { label: "Lithuania", y: 47.5 },
-  { label: "Kazakhstan", y: 40.1 },
-  { label: "Belarus",  y: 39.3 },
-  { label: "Suriname",  y: 36.1 }
+  { label: "Denmark", y: 13.2 },
+  { label: "Russia", y: 48.3 },
+  { label: "Burundi", y: 23.1 },
 ]
 
 const dataHappyIndexMale = [
+  { label: "Denmark", y: 7.526 },
   { label: "Russia", y: 5.856 },
-  { label: "Lithuania", y: 5.813 },
-  { label: "Kazakhstan", y: 5.919 },
-  { label: "Belarus", y: 5.802 },
-  { label: "Suriname", y: 6.269 }
+  { label: "Burundi", y: 2.905 },
 ]
 
 const dataBothSexesTop5 = [
-  { label: "Russia",  y: 26.5 },
-  { label: "Lithuania", y: 25.7 },
-  { label: "Suriname", y: 23.2 },
-  { label: "Kazakhstan",  y: 22.8 },
-  { label: "Guinea",  y: 22.0 }
+  { label: "Denmark", y: 9.2 },
+  { label: "Russia", y: 26.5 },
+  { label: "Burundi", y: 15 },
 ]
 
 const dataHappyIndexBothSexes = [
-  { label: "Russia",  y: 5.865 },
-  { label: "Lithuania", y: 5.813 },
-  { label: "Suriname", y: 6.269 },
-  { label: "Kazakhstan",  y: 5.919 },
-  { label: "Guinea",  y: 3.607 }
+  { label: "Denmark", y: 7.526 },
+  { label: "Russia", y: 5.856 },
+  { label: "Burundi", y: 2.905 },
 ]
 
 
@@ -90,6 +78,9 @@ function renderBarChart(userOption) {
     title:{
       text: "Suicide Rate vs Happy Index"
     },
+    subtitles: [{
+      text: "The happiest country vs the country with the highest suicide rate vs the unhappiest country"
+    }],
     axisX: {
       title: "Country"
     },

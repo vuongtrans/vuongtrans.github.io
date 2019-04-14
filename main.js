@@ -180,9 +180,9 @@ function renderWorldMap(userOption) {
     data: dataset,
     geographyConfig: {
       borderColor: '#000000',
-      highlightBorderWidth: 5,
+      highlightBorderWidth: 3,
       highlightFillColor: function(geo) {
-        return geo['fillColor'] || '#F5F5F5';
+        return geo['fillColor'] || '#000000';
       },
       highlightBorderColor: '#FFFF00',
       popupTemplate: function(geo, data) {

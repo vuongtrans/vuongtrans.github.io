@@ -60,11 +60,6 @@ body {
   float: left;
 }
 
-#map-chart { 
-  overflow:auto; 
-  width: 100%; 
-} 
-
 .flex-container {
   display: flex;
   justify-content: center
@@ -85,10 +80,12 @@ body {
   margin-top: 6rem;
 } 
 
+/* Hide the hamburger menu of bar chart */
 .canvasjs-chart-toolbar {
   display: none;
 }
 
+/* Hide specific text of bar chart */
 .canvasjs-chart-credit {
   display: none;
 }

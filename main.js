@@ -1,10 +1,11 @@
 /*
  * The following data was retrieved from two different data sources and compiled together
  * There were countries that has no happy index present, so they were skipped
+ * (Was simpler to gather the following data manually & due to shortage of time)
  * The following six lists comprises of data regarding the suicide rate and happy index of the happiest country,
  *     the country with the highest suicide rate (per type), and the "unhappiest" country
  */
-const dataFemaleTop5 = [
+const dataFemale = [
   { label: "Denmark", y: 5.2 },
   { label: "Uganda", y: 18.7 },
   { label: "Burundi", y: 7.7 },
@@ -16,7 +17,7 @@ const dataHappyIndexFemale = [
   { label: "Burundi", y: 2.905 },
 ]
 
-const dataMaleTop5 = [
+const dataMale = [
   { label: "Denmark", y: 13.2 },
   { label: "Russia", y: 48.3 },
   { label: "Burundi", y: 23.1 },
@@ -28,7 +29,7 @@ const dataHappyIndexMale = [
   { label: "Burundi", y: 2.905 },
 ]
 
-const dataBothSexesTop5 = [
+const dataBothSexes = [
   { label: "Denmark", y: 9.2 },
   { label: "Russia", y: 26.5 },
   { label: "Burundi", y: 15 },
@@ -53,6 +54,7 @@ window.onload = function () {
 
 /*
  * Render the bar chart
+ * Modified example from CanvasJS JavaScript library
  */
 function renderBarChart(userOption) {
   // Clear out the div to update it with the correct data and new rendered map
@@ -62,13 +64,13 @@ function renderBarChart(userOption) {
   let dataSuicideRate;
   let dataHappyIndex;
   if (userOption == 'Female') {
-    dataSuicideRate = dataFemaleTop5;
+    dataSuicideRate = dataFemale;
     dataHappyIndex = dataHappyIndexFemale;
   } else if (userOption == 'Male') {
-    dataSuicideRate = dataMaleTop5;
+    dataSuicideRate = dataMale;
     dataHappyIndex = dataHappyIndexMale;
   } else {
-    dataSuicideRate = dataBothSexesTop5;
+    dataSuicideRate = dataBothSexes;
     dataHappyIndex = dataHappyIndexBothSexes;
   }
 
@@ -126,6 +128,7 @@ function renderBarChart(userOption) {
 
 /*
  * Render the world map based upon user selection
+ * Modified example from DataMaps JavaScript library
  */
 function renderWorldMap(userOption) {
   // Clear out the div to update it with the correct data and new rendered map
@@ -144,11 +147,8 @@ function renderWorldMap(userOption) {
   let series = data;
   let dataset = {};
 
-  // Bits and pieces has been borrowed from example from the DataMaps JavaScript 
-  // library to understand how to populate the map
-
   // Color the countries using blues as the fill in color
-  // Blue has been researched to help prevent suicides
+  // Blue has been researched and is believed to lessen the potential of suicide/depression
   let onlyValues = series.map(function(obj){ return obj[1]; });
   let minValue = Math.min.apply(null, onlyValues),
       maxValue = Math.max.apply(null, onlyValues);
@@ -158,7 +158,6 @@ function renderWorldMap(userOption) {
 
   // Create the data set to be used to populate and fill in the map
   series.forEach(function(item){ //
-    // item example value ["USA", 70]
     let iso = item[0],
         value = item[1];
     dataset[iso] = { suicideRate: value, fillColor: paletteScale(value) };
@@ -189,7 +188,7 @@ function renderWorldMap(userOption) {
 }
 
 /*
- * If user selects 'Male', render the world map with the data about males
+ * If user selects 'Male', render the world map and bar chart with the data about males
  */
 function maleClicked() {
   renderWorldMap('Male');
@@ -197,7 +196,7 @@ function maleClicked() {
 }
 
 /*
- * If user selects 'Female', render the world map with the data about females
+ * If user selects 'Female', render the world map and bar chart with the data about females
  */
 function femaleClicked() {
   renderWorldMap('Female');
@@ -205,7 +204,7 @@ function femaleClicked() {
 }
 
 /*
- * If user selects 'Both sexes', render the world map with the data about both sexes
+ * If user selects 'Both sexes', render the world map and bar chart with the data about both sexes
  */
 function bothSexesClicked() {
   renderWorldMap('Both');

@@ -1,83 +1,180 @@
 /*
+ * The following data was retrieved from two different data sources and compiled together
+ * There were countries that has no happy index present, so they are skipped
+ * The following six lists comprises of data regarding the suicide rate and happy index of the "Top 5" countries
+ */
+const dataFemaleTop5 = [
+  { label: "Uganda", y: 18.7 },
+  { label: "Nigeria", y: 17.1 },
+  { label: "Indonesia", y: 14.5 },
+  { label: "Sierra Leone", y: 14.2 },
+  { label: "Chad", y: 13.8 }
+]
+
+const dataHappyIndexFemale = [
+  { label: "Uganda", y: 3.739 },
+  { label: "Nigeria", y: 4.875 },
+  { label: "Indonesia", y: 5.314 },
+  { label: "Sierra Leone", y: 4.635 },
+  { label: "Chad", y: 3.763 }
+]
+
+const dataMaleTop5 = [
+  { label: "Russia",  y: 48.3 },
+  { label: "Lithuania", y: 47.5 },
+  { label: "Kazakhstan", y: 40.1 },
+  { label: "Belarus",  y: 39.3 },
+  { label: "Suriname",  y: 36.1 }
+]
+
+const dataHappyIndexMale = [
+  { label: "Russia", y: 5.856 },
+  { label: "Lithuania", y: 5.813 },
+  { label: "Kazakhstan", y: 5.919 },
+  { label: "Belarus", y: 5.802 },
+  { label: "Suriname", y: 6.269 }
+]
+
+const dataBothSexesTop5 = [
+  { label: "Russia",  y: 26.5 },
+  { label: "Lithuania", y: 25.7 },
+  { label: "Suriname", y: 23.2 },
+  { label: "Kazakhstan",  y: 22.8 },
+  { label: "Guinea",  y: 22.0 }
+]
+
+const dataHappyIndexBothSexes = [
+  { label: "Russia",  y: 5.865 },
+  { label: "Lithuania", y: 5.813 },
+  { label: "Suriname", y: 6.269 },
+  { label: "Kazakhstan",  y: 5.919 },
+  { label: "Guinea",  y: 3.607 }
+]
+
+
+/*
  * Initial the webpage with the map populated with data about the suicide rate for both sexes
  * in addition to the bar chart 
  */
 window.onload = function () {
 
   renderWorldMap('Both');
-  
-var chart = new CanvasJS.Chart("chartContainer", {
-  exportEnabled: true,
-  animationEnabled: true,
-  title:{
-    text: "Car Parts Sold in Different States"
-  },
-  subtitles: [{
-    text: "Click Legend to Hide or Unhide Data Series"
-  }], 
-  axisX: {
-    title: "States"
-  },
-  axisY: {
-    title: "Oil Filter - Units",
-    titleFontColor: "#4F81BC",
-    lineColor: "#4F81BC",
-    labelFontColor: "#4F81BC",
-    tickColor: "#4F81BC"
-  },
-  axisY2: {
-    title: "Clutch - Units",
-    titleFontColor: "#C0504E",
-    lineColor: "#C0504E",
-    labelFontColor: "#C0504E",
-    tickColor: "#C0504E"
-  },
-  toolTip: {
-    shared: true
-  },
-  legend: {
-    cursor: "pointer",
-    itemclick: toggleDataSeries
-  },
-  data: [{
-    type: "column",
-    name: "Oil Filter",
-    showInLegend: true,      
-    yValueFormatString: "#,##0.# Units",
-    dataPoints: [
-      { label: "New Jersey",  y: 19034.5 },
-      { label: "Texas", y: 20015 },
-      { label: "Oregon", y: 25342 },
-      { label: "Montana",  y: 20088 },
-      { label: "Massachusetts",  y: 28234 }
-    ]
-  },
-  {
-    type: "column",
-    name: "Clutch",
-    axisYType: "secondary",
-    showInLegend: true,
-    yValueFormatString: "#,##0.# Units",
-    dataPoints: [
-      { label: "New Jersey", y: 210.5 },
-      { label: "Texas", y: 135 },
-      { label: "Oregon", y: 425 },
-      { label: "Montana", y: 130 },
-      { label: "Massachusetts", y: 528 }
-    ]
-  }]
-});
-chart.render();
+  renderBarChart('Both');
 
-function toggleDataSeries(e) {
-  if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-    e.dataSeries.visible = false;
-  } else {
-    e.dataSeries.visible = true;
-  }
-  e.chart.render();
+// var chart = new CanvasJS.Chart("suicide-rate-vs-happy-index", {
+//   exportEnabled: true,
+//   animationEnabled: true,
+//   title:{
+//     text: "Suicide Rate vs Happy Index"
+//   },
+//   axisX: {
+//     title: "Country"
+//   },
+//   axisY: {
+//     title: "Suicide Rate",
+//     titleFontColor: "#4F81BC",
+//     lineColor: "#4F81BC",
+//     labelFontColor: "#4F81BC",
+//     tickColor: "#4F81BC"
+//   },
+//   axisY2: {
+//     title: "Happy Index (out of 10)",
+//     titleFontColor: "#C0504E",
+//     lineColor: "#C0504E",
+//     labelFontColor: "#C0504E",
+//     tickColor: "#C0504E"
+//   },
+//   toolTip: {
+//     shared: true
+//   },
+//   legend: {
+//     cursor: "pointer"
+//   },
+//   data: [{
+//     type: "column",
+//     name: "Suicide Rate",
+//     showInLegend: true,      
+//     yValueFormatString: "#,##0.# Units",
+//     dataPoints: [
+//       { label: "Russia",  y: 48.3 },
+//       { label: "Lithuania", y: 47.5 },
+//       { label: "Kazakhstan", y: 40.1 },
+//       { label: "Belarus",  y: 39.3 },
+//       { label: "Suriname",  y: 36.1 }
+//     ]
+//   },
+//   {
+//     type: "column",
+//     name: "Happy Index",
+//     axisYType: "secondary",
+//     showInLegend: true,
+//     yValueFormatString: "#,##0.# Units",
+//     dataPoints: [
+//       { label: "Russia", y: 5.856 },
+//       { label: "Lithuania", y: 5.813 },
+//       { label: "Kazakhstan", y: 5.919 },
+//       { label: "Belarus", y: 5.802 },
+//       { label: "Suriname", y: 6.269 }
+//     ]
+//   }]
+// });
+// chart.render();
+
 }
 
+/*
+ * Render the bar chart
+ */
+function renderBarChart(userOption) {
+  // Clear out the div to update it with the correct data and new rendered map
+  document.getElementById('suicide-rate-vs-happy-index').innerHTML = "";
+
+  let chart = new CanvasJS.Chart("suicide-rate-vs-happy-index", {
+    exportEnabled: true,
+    animationEnabled: true,
+    title:{
+      text: "Suicide Rate vs Happy Index"
+    },
+    axisX: {
+      title: "Country"
+    },
+    axisY: {
+      title: "Suicide Rate",
+      titleFontColor: "#4F81BC",
+      lineColor: "#4F81BC",
+      labelFontColor: "#4F81BC",
+      tickColor: "#4F81BC"
+    },
+    axisY2: {
+      title: "Happy Index (out of 10)",
+      titleFontColor: "#C0504E",
+      lineColor: "#C0504E",
+      labelFontColor: "#C0504E",
+      tickColor: "#C0504E"
+    },
+    toolTip: {
+      shared: true
+    },
+    legend: {
+      cursor: "pointer"
+    },
+    data: [{
+      type: "column",
+      name: "Suicide Rate",
+      showInLegend: true,      
+      yValueFormatString: "#,##0.# Units",
+      dataPoints: dataBothSexesTop5
+    },
+    {
+      type: "column",
+      name: "Happy Index",
+      axisYType: "secondary",
+      showInLegend: true,
+      yValueFormatString: "#,##0.# Units",
+      dataPoints: dataHappyIndexBothSexes
+    }]
+  });
+  chart.render();
 }
 
 /*

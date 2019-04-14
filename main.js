@@ -108,7 +108,7 @@ function renderBarChart(userOption) {
       type: "column",
       name: "Suicide Rate",
       showInLegend: true,      
-      yValueFormatString: "#,##0.# Units",
+      yValueFormatString: "#,##0.#",
       dataPoints: dataSuicideRate
     },
     {
@@ -116,7 +116,7 @@ function renderBarChart(userOption) {
       name: "Happy Index",
       axisYType: "secondary",
       showInLegend: true,
-      yValueFormatString: "#,##0.# Units",
+      yValueFormatString: "#,##0.#",
       dataPoints: dataHappyIndex
     }]
   });

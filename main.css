@@ -15,7 +15,7 @@ body {
 #information { 
   text-align: justify;
 	text-align-last: center; 
-  font: 15 15px/1.3 'Merienda One', Helvetica, sans-serif;
+  font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
   color: #000000;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .optionTitle {
-  font: 15 15px/1.3 'Merienda One', Helvetica, sans-serif;
+  font: 10 10px/1.3 'Merienda One', Helvetica, sans-serif;
   color: #000000;
 }
 

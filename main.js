@@ -95,17 +95,17 @@ function renderBarChart(userOption) {
     },
     axisY: {
       title: "Suicide Rate",
-      titleFontColor: "#FFFF00",
-      lineColor: "#FFFF00",
-      labelFontColor: "#FFFF00",
-      tickColor: "#FFFF00"
+      titleFontColor: "#4F81BC",
+      lineColor: "#4F81BC",
+      labelFontColor: "#4F81BC",
+      tickColor: "#4F81BC"
     },
     axisY2: {
       title: "Happy Index (out of 10)",
-      titleFontColor: "#FFA500",
-      lineColor: "#FFA500",
-      labelFontColor: "#FFA500",
-      tickColor: "#FFA500"
+      titleFontColor: "#C0504E",
+      lineColor: "#C0504E",
+      labelFontColor: "#C0504E",
+      tickColor: "#C0504E"
     },
     toolTip: {
       shared: true
@@ -117,7 +117,7 @@ function renderBarChart(userOption) {
       type: "column",
       name: "Suicide Rate",
       showInLegend: true,      
-      yValueFormatString: "#,##0.#",
+      yValueFormatString: "#,##0.# Units",
       dataPoints: dataSuicideRate
     },
     {
@@ -125,7 +125,7 @@ function renderBarChart(userOption) {
       name: "Happy Index",
       axisYType: "secondary",
       showInLegend: true,
-      yValueFormatString: "#,##0.#",
+      yValueFormatString: "#,##0.# Units",
       dataPoints: dataHappyIndex
     }]
   });

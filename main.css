@@ -75,7 +75,7 @@ body {
   height: 475px; 
   padding: 1em; 
   position: relative; 
-  padding-left: -1rem;
+  margin-left: -3rem;
 } 
 
 #suicide-rate-vs-happy-index { 

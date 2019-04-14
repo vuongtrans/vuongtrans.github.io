@@ -70,6 +70,7 @@ body {
 
 .flex-container {
   display: flex;
+  justify-content: center
 }
 
 #suicide-rate-map { 

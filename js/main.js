@@ -1,6 +1,6 @@
 /*
  * The following data was retrieved from two different data sources and compiled together
- * There were countries that has no happy index present, so they were skipped
+ * There were countries that had no happy index present, so they were skipped
  * (Was simpler to gather the following data manually & due to shortage of time)
  * The following six lists comprises of data regarding the suicide rate and happy index of the happiest country,
  *     the country with the highest suicide rate (per type), and the "unhappiest" country
@@ -95,7 +95,7 @@ function renderBarChart(userOption) {
       tickColor: "#4F81BC"
     },
     axisY2: {
-      title: "Happy Index (out of 10)",
+      title: "Happy Index",
       titleFontColor: "#C0504E",
       lineColor: "#C0504E",
       labelFontColor: "#C0504E",

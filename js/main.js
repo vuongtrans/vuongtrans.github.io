@@ -123,6 +123,7 @@ function renderBarChart(userOption) {
       dataPoints: dataHappyIndex
     }]
   });
+  chart.getCredits().setEnabled(false);
   chart.render();
 }
 
